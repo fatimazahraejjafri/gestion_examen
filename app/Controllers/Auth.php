@@ -34,7 +34,7 @@ class Auth extends Controller
 
         if ($user) {
             // Verify the password
-            if ($password ==$user['password']) {
+            if (password_verify($password, $user['password'])) { 
                 // Set session data
                 $sessionData = [
                     'id'        => $user['id_compte'],
